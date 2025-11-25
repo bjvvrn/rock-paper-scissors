@@ -96,4 +96,6 @@ function playGame() {
     playRound(getHumanChoice(), getComputerChoice());
     playRound(getHumanChoice(), getComputerChoice());
     playRound(getHumanChoice(), getComputerChoice());
+
+    showWinner(humanScore, computerScore);
 }
