@@ -16,6 +16,16 @@ function getHumanChoice() {
     return humanChoice.toLocaleLowerCase();
 }
 
+function showWinner(humanScore, computerScore) {
+    if (humanScore > computerScore) {
+        console.log('You win the game! Play again.');
+    } else if (humanScore < computerScore) {
+        console.log('You lose the game. Try again!');
+    } else {
+        console.log('Its a tie! Play again.');
+    }
+}
+
 function playGame() {
     function playRound(humanChoice, computerChoice) {
         switch (humanChoice) {
