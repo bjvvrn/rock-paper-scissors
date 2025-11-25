@@ -2,9 +2,9 @@
 
 This project consists of creating a Rock Paper Scissors game that runs in the 
 console. While building this project, I practiced using conditional statements 
-such as if...else and switch, and strengthened my understanding of declaring and 
-calling functions. I also applied good function design principles by ensuring 
-each function performs a single, clear task.
+such as `if...else` and `switch`, and strengthened my understanding of declaring 
+and calling functions. I also applied good function design principles by 
+ensuring each function performs a single, clear task.
 
 The game allows the user to input their choice and then compares it with a 
 randomly generated computer choice to determine the winner.
