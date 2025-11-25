@@ -99,3 +99,5 @@ function playGame() {
 
     showWinner(humanScore, computerScore);
 }
+
+playGame();
