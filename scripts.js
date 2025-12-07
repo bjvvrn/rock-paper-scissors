@@ -90,6 +90,14 @@ function playGame() {
 
     let humanScore = 0;
     let computerScore = 0;
+    
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            let humanChoice = button.textContent.toLowerCase();
+            playRound(humanChoice, getComputerChoice());
+        });
+    });
 
     showWinner(humanScore, computerScore);
 }
