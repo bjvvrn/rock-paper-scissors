@@ -91,12 +91,6 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-
     showWinner(humanScore, computerScore);
 }
 
