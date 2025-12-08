@@ -17,12 +17,11 @@ function getHumanChoice() {
 }
 
 function showWinner(humanScore, computerScore) {
+    const divMessage = document.querySelector('#message');
     if (humanScore > computerScore) {
-        console.log('You win the game! Play again.');
-    } else if (humanScore < computerScore) {
-        console.log('You lose the game. Try again!');
+        divMessage.textContent = 'You win the game! Play again.';
     } else {
-        console.log('Its a tie! Play again.');
+        divMessage.textContent = 'You lose the game. Play again!';
     }
 }
 
@@ -106,11 +105,11 @@ function playGame() {
             let humanChoice = button.textContent.toLowerCase();
             if (humanScore < 5 && computerScore < 5) {
                 playRound(humanChoice, getComputerChoice());
+            } else {
+                showWinner(humanScore, computerScore);
             }
         });
     });
-
-    showWinner(humanScore, computerScore);
 }
 
 playGame();
