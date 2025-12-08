@@ -31,6 +31,10 @@ function changeGameInfo(humanScore, computerScore, message) {
     
     const scoreDiv = document.querySelector('#scores');
     scoreDiv.textContent = `You: ${humanScore}, Computer: ${computerScore}`;
+
+    if (humanScore === 5 || computerScore === 5) {
+        showWinner(humanScore, computerScore);
+    }
 }
 
 function playGame() {
@@ -105,8 +109,6 @@ function playGame() {
             let humanChoice = button.textContent.toLowerCase();
             if (humanScore < 5 && computerScore < 5) {
                 playRound(humanChoice, getComputerChoice());
-            } else {
-                showWinner(humanScore, computerScore);
             }
         });
     });
