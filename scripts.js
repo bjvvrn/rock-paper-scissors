@@ -104,7 +104,9 @@ function playGame() {
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             let humanChoice = button.textContent.toLowerCase();
-            playRound(humanChoice, getComputerChoice());
+            if (humanScore < 5 && computerScore < 5) {
+                playRound(humanChoice, getComputerChoice());
+            }
         });
     });
 
