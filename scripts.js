@@ -26,29 +26,33 @@ function showWinner(humanScore, computerScore) {
     }
 }
 
-function changeScores(humanScore, computerScore) {
+function changeGameInfo(humanScore, computerScore, message) {
+    const divMessage = document.querySelector('#message');
+    divMessage.textContent = message;
+    
     const scoreDiv = document.querySelector('#scores');
     scoreDiv.textContent = `You: ${humanScore}, Computer: ${computerScore}`;
 }
 
 function playGame() {
     function playRound(humanChoice, computerChoice) {
+        let message;
         switch (humanChoice) {
             case 'paper':
                 switch (computerChoice) {
                     case 'paper':
-                        console.log('Its a tie!');
-                        changeScores(humanScore, computerScore);
+                        message = 'It\s a tie!';
+                        changeGameInfo(humanScore, computerScore, message);
                         break;
                     case 'rock':
-                        console.log('You win! Paper beats Rock');
+                        message = 'You win! Paper beats Rock';
                         humanScore++;
-                        changeScores(humanScore, computerScore);
+                        changeGameInfo(humanScore, computerScore, message);
                         break;
                     case 'scissors':
-                        console.log('You lose! Scissors beats Paper');
+                        message = 'You lose! Scissors beats Paper';
                         computerScore++;
-                        changeScores(humanScore, computerScore);
+                        changeGameInfo(humanScore, computerScore, message);
                         break;
                 }
                 break;
@@ -56,18 +60,18 @@ function playGame() {
             case 'rock':
                 switch (computerChoice) {
                     case 'rock':
-                        console.log('Its a tie!');
-                        changeScores(humanScore, computerScore);
+                        message = 'It\s a tie!';
+                        changeGameInfo(humanScore, computerScore, message);
                         break;
                     case 'paper':
-                        console.log('You lose! Paper beats Rock');
+                        message = 'You lose! Paper beats Rock';
                         computerScore++;
-                        changeScores(humanScore, computerScore);
+                        changeGameInfo(humanScore, computerScore, message);
                         break;
                     case 'scissors':
-                        console.log('You win! Rock beats Scissors');
+                        message = 'You win! Rock beats Scissors';
                         humanScore++;
-                        changeScores(humanScore, computerScore);
+                        changeGameInfo(humanScore, computerScore, message);
                         break;
                 }
                 break;
@@ -75,18 +79,18 @@ function playGame() {
             case 'scissors':
                 switch (computerChoice) {
                     case 'scissors':
-                        console.log('Its a tie!');
-                        changeScores(humanScore, computerScore);
+                        message = 'It\s a tie!';
+                        changeGameInfo(humanScore, computerScore, message);
                         break;
                     case 'paper':
-                        console.log('You win! Scissors beats paper');
+                        message = 'You win! Scissors beats paper';
                         humanScore++;
-                        changeScores(humanScore, computerScore);
+                        changeGameInfo(humanScore, computerScore, message);
                         break;
                     case 'rock':
-                        console.log('You lose! Rock beats Scrissors');
+                        message = 'You lose! Rock beats Scrissors';
                         computerScore++;
-                        changeScores(humanScore, computerScore);
+                        changeGameInfo(humanScore, computerScore, message);
                         break;
                 }
                 break;
