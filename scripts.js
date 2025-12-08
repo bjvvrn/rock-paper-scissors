@@ -26,6 +26,11 @@ function showWinner(humanScore, computerScore) {
     }
 }
 
+function changeScores(humanScore, computerScore) {
+    const scoreDiv = document.querySelector('#scores');
+    scoreDiv.textContent = `You: ${humanScore}, Computer: ${computerScore}`;
+}
+
 function playGame() {
     function playRound(humanChoice, computerChoice) {
         switch (humanChoice) {
@@ -33,17 +38,17 @@ function playGame() {
                 switch (computerChoice) {
                     case 'paper':
                         console.log('Its a tie!');
-                        console.log(`human: ${humanScore}, computer: ${computerScore}`);
+                        changeScores(humanScore, computerScore);
                         break;
                     case 'rock':
                         console.log('You win! Paper beats Rock');
                         humanScore++;
-                        console.log(`human: ${humanScore}, computer: ${computerScore}`);
+                        changeScores(humanScore, computerScore);
                         break;
                     case 'scissors':
                         console.log('You lose! Scissors beats Paper');
                         computerScore++;
-                        console.log(`human: ${humanScore}, computer: ${computerScore}`);
+                        changeScores(humanScore, computerScore);
                         break;
                 }
                 break;
@@ -52,17 +57,17 @@ function playGame() {
                 switch (computerChoice) {
                     case 'rock':
                         console.log('Its a tie!');
-                        console.log(`human: ${humanScore}, computer: ${computerScore}`);
+                        changeScores(humanScore, computerScore);
                         break;
                     case 'paper':
                         console.log('You lose! Paper beats Rock');
                         computerScore++;
-                        console.log(`human: ${humanScore}, computer: ${computerScore}`);
+                        changeScores(humanScore, computerScore);
                         break;
                     case 'scissors':
                         console.log('You win! Rock beats Scissors');
                         humanScore++;
-                        console.log(`human: ${humanScore}, computer: ${computerScore}`);
+                        changeScores(humanScore, computerScore);
                         break;
                 }
                 break;
@@ -71,17 +76,17 @@ function playGame() {
                 switch (computerChoice) {
                     case 'scissors':
                         console.log('Its a tie!');
-                        console.log(`human: ${humanScore}, computer: ${computerScore}`);
+                        changeScores(humanScore, computerScore);
                         break;
                     case 'paper':
                         console.log('You win! Scissors beats paper');
                         humanScore++;
-                        console.log(`human: ${humanScore}, computer: ${computerScore}`);
+                        changeScores(humanScore, computerScore);
                         break;
                     case 'rock':
                         console.log('You lose! Rock beats Scrissors');
                         computerScore++;
-                        console.log(`human: ${humanScore}, computer: ${computerScore}`);
+                        changeScores(humanScore, computerScore);
                         break;
                 }
                 break;
