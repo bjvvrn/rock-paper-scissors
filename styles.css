@@ -20,3 +20,13 @@ body {
     align-items: center;
     height: 100vh;
 }
+
+#game-information {
+    display: flex;
+    flex-direction: column;
+}
+
+#game-information div {
+    width: 300px;
+    text-align: center;
+}
