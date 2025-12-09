@@ -34,7 +34,25 @@ function changeGameInfo(humanScore, computerScore, message) {
 
     if (humanScore === 5 || computerScore === 5) {
         showWinner(humanScore, computerScore);
+        playAgain();
     }
+}
+
+function playAgain() {
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+        button.remove();
+    });
+
+    const buttonContainer = document.querySelector('#buttons-container');
+    
+    const playAgainButton = document.createElement('button');
+    playAgainButton.textContent = 'Play again';
+    playAgainButton.addEventListener('click', () => {
+        playAgainButton.remove();
+    })
+
+    buttonContainer.appendChild(playAgainButton);
 }
 
 function playGame() {
