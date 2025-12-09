@@ -38,6 +38,24 @@ function changeGameInfo(humanScore, computerScore, message) {
     }
 }
 
+function reset() {
+    const buttonContainer = document.querySelector('#buttons-container');
+
+    const divMessage = document.querySelector('#message');
+    divMessage.textContent = 'Choose an option.';
+
+    const divScores = document.querySelector('#scores');
+    divScores.textContent = 'You: 0, Computer: 0'
+
+    const options = ['Rock', 'Paper', 'Scissors'];
+    options.forEach(option => {
+        const optionButton = document.createElement('button');
+        optionButton.textContent = option;
+
+        buttonContainer.appendChild(optionButton);
+    })
+}
+
 function playAgain() {
     const buttons = document.querySelectorAll('button');
     buttons.forEach(button => {
@@ -50,6 +68,8 @@ function playAgain() {
     playAgainButton.textContent = 'Play again';
     playAgainButton.addEventListener('click', () => {
         playAgainButton.remove();
+        reset();
+        playGame();
     })
 
     buttonContainer.appendChild(playAgainButton);
