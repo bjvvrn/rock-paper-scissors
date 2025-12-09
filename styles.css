@@ -46,3 +46,8 @@ body {
 h1 {
     font-size: 60px;
 }
+
+#buttons-container {
+    display: flex;
+    gap: 22px;
+}
